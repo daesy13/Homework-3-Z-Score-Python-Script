@@ -112,3 +112,22 @@ def z_score(x, mu, sigma):
     z_score = (x - mu) / sigma
 
     return z_score # Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
+
+print(f"{test_z_score_function()}")
+
+def pop_test_function(pop_data):
+    pop_avg = mean(pop_data)
+    pop_sd = stdev(pop_data, pop_avg)
+
+    for item in pop_data:
+        z_score_result = z_score(item, pop_avg, pop_sd)
+        print(f"Item: {item}, Z-Score: {z_score_result}")
+
+print("TEST CASE POPULATION 1:")
+pop_test_function(population1)
+
+print("\nTEST CASE POPULATION 2:")
+pop_test_function(population2)
+
+print("\nTEST CASE POPULATION 3:")
+pop_test_function(population3)
